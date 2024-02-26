@@ -1,0 +1,11 @@
+{
+  "name": "typescript-study",
+  "version": "1.0.0",
+  "description": "Explore typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "sorrel012",
+  "license": "ISC"
+}
