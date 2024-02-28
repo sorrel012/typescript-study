@@ -34,11 +34,19 @@ class ITDepartment extends Department {
 }
 
 class AccountingDepartment extends Department {
+  private lastReport: string;
+
+  get mostRecentReport() {
+    if (this.lastReport) return this.lastReport;
+    throw new Error('No report found.');
+  }
+
   constructor(
     id: string,
     private reports: string[],
   ) {
     super(id, 'Accounting');
+    this.lastReport = reports[0];
   }
 
   addReport(text: string) {
