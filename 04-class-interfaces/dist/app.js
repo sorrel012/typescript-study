@@ -27,6 +27,11 @@ class AccountingDepartment extends Department {
             return this.lastReport;
         throw new Error('No report found.');
     }
+    set mostRecentReport(value) {
+        if (!value)
+            throw new Error('Please pass in a valid value!');
+        this.addReport(value);
+    }
     constructor(id, reports) {
         super(id, 'Accounting');
         this.reports = reports;
