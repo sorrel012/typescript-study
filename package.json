@@ -9,6 +9,8 @@
   "author": "sorrel012",
   "license": "ISC",
   "devDependencies": {
-    "prettier": "^3.2.5"
+    "@types/node": "^20.11.21",
+    "prettier": "^3.2.5",
+    "typescript": "^5.3.3"
   }
 }
