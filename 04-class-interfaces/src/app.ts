@@ -1,4 +1,5 @@
 class Department {
+  static fiscalYear = 2024;
   // private id: string;
   // private name: string;
   protected employees: string[] = [];
@@ -11,12 +12,18 @@ class Department {
     // this.name = n;
   }
 
+  static createEmployee(name: string) {
+    return { name: name };
+  }
+
   describe(this: Department) {
     console.log(`Department (${this.id}): ${this.name}`);
   }
 
   addEmployee(employee: string) {
-    this.employees.push(employee);
+    if (!this.employees.includes(employee)) {
+      this.employees.push(employee);
+    }
   }
 
   printEmployeeInformation() {
@@ -32,6 +39,13 @@ class ITDepartment extends Department {
     super(id, 'IT');
   }
 }
+
+const employee1 = Department.createEmployee('Han');
+
+const it = new ITDepartment('D1', ['Hana']);
+
+it.addEmployee('Hana');
+it.addEmployee('Sorrel');
 
 class AccountingDepartment extends Department {
   private lastReport: string;

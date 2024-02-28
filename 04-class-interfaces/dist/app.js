@@ -5,22 +5,32 @@ class Department {
         this.name = name;
         this.employees = [];
     }
+    static createEmployee(name) {
+        return { name: name };
+    }
     describe() {
         console.log(`Department (${this.id}): ${this.name}`);
     }
     addEmployee(employee) {
-        this.employees.push(employee);
+        if (!this.employees.includes(employee)) {
+            this.employees.push(employee);
+        }
     }
     printEmployeeInformation() {
         console.log(`${this.employees.length}명, ${this.employees}`);
     }
 }
+Department.fiscalYear = 2024;
 class ITDepartment extends Department {
     constructor(id, admins) {
         super(id, 'IT');
         this.admins = admins;
     }
 }
+const employee1 = Department.createEmployee('Han');
+const it = new ITDepartment('D1', ['Hana']);
+it.addEmployee('Hana');
+it.addEmployee('Sorrel');
 class AccountingDepartment extends Department {
     get mostRecentReport() {
         if (this.lastReport)
