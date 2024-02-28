@@ -1,7 +1,7 @@
 class Department {
   // private id: string;
   // private name: string;
-  private employees: string[] = [];
+  protected employees: string[] = [];
 
   constructor(
     private readonly id: string,
@@ -24,13 +24,19 @@ class Department {
   }
 }
 
-const accounting = new Department('D1', 'Accounting');
+class ITDepartment extends Department {
+  constructor(
+    id: string,
+    public admins: string[],
+  ) {
+    super(id, 'IT');
+  }
+}
 
+const accounting = new ITDepartment('D1', ['Hana', 'So']);
 accounting.describe();
-
 accounting.addEmployee('Hana');
 accounting.addEmployee('sorrel');
-
 accounting.printEmployeeInformation();
 
 // const accountingCopy = {
