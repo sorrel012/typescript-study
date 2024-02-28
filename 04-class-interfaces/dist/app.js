@@ -21,9 +21,20 @@ class ITDepartment extends Department {
         this.admins = admins;
     }
 }
-const accounting = new ITDepartment('D1', ['Hana', 'So']);
-accounting.describe();
+class AccountingDepartment extends Department {
+    constructor(id, reports) {
+        super(id, 'Accounting');
+        this.reports = reports;
+    }
+    addReport(text) {
+        this.reports.push(text);
+    }
+    printReport() {
+        console.log(this.reports);
+    }
+}
+const accounting = new AccountingDepartment('D1', []);
+accounting.addReport('Something went wrong...');
 accounting.addEmployee('Hana');
-accounting.addEmployee('sorrel');
-accounting.printEmployeeInformation();
+accounting.addReport('Sorrel');
 //# sourceMappingURL=app.js.map
