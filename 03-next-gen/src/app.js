@@ -13,6 +13,6 @@ const add = (...numbers) => {
         return curResult + curValue;
     }, 0);
 };
-const addedNumbers = add(5, 10, 20);
+const addedNumbers = add(5, 10, 20, 3.7);
 console.log(addedNumbers);
 //# sourceMappingURL=app.js.map
