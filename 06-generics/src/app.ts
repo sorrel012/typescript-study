@@ -11,7 +11,7 @@
 //   data.split(' ');
 // });
 
-function merge<T, U>(objA: T, objB: U) {
+function merge<T extends object, U extends object>(objA: T, objB: U) {
   return Object.assign({}, objA, objB);
 }
 
@@ -20,3 +20,17 @@ const mergedObject = merge<{ name: string }, { age: number }>(
   { age: 27 },
 );
 console.log(mergedObject.age);
+
+interface Lengthy {
+  length: number;
+}
+
+function countAndDescribe<T extends Lengthy>(element: T): [T, string] {
+  let descriptionText = 'Got no value.';
+  if (element.length === 1) {
+    descriptionText = 'Got 1 element.';
+  } else if (element.length > 1) {
+    descriptionText = `Got ${element.length} elements`;
+  }
+  return [element, descriptionText];
+}
