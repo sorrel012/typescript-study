@@ -18,4 +18,36 @@ function extractAndConvert(obj, key) {
     return 'Value: ' + obj[key];
 }
 extractAndConvert({ name: 'Hana' }, 'name');
+class DataStorage {
+    constructor() {
+        this.data = [];
+    }
+    addItem(item) {
+        this.data.push(item);
+    }
+    removeItem(item) {
+        if (this.data.indexOf(item) === -1) {
+            return;
+        }
+        this.data.splice(this.data.indexOf(item), 1);
+    }
+    getItems() {
+        return [...this.data];
+    }
+}
+const textStorage = new DataStorage();
+textStorage.addItem('Hana');
+textStorage.addItem('Mana');
+textStorage.removeItem('Mana');
+const numberStorage = new DataStorage();
+numberStorage.addItem(5);
+numberStorage.addItem(10);
+numberStorage.addItem(15);
+numberStorage.removeItem(5);
+const objStorage = new DataStorage();
+const nameObject = { name: 'Hana' };
+objStorage.addItem(nameObject);
+objStorage.addItem({ name: 'Mana' });
+objStorage.removeItem(nameObject);
+console.log(objStorage.getItems());
 //# sourceMappingURL=app.js.map
