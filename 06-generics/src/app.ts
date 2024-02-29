@@ -100,3 +100,7 @@ function createCourseGoal(
   courseGoal.deadline = date;
   return courseGoal as CourseGoal;
 }
+
+const names: Readonly<string[]> = ['Hana', 'Mana'];
+// names.push('Lucy');
+// names.pop();
