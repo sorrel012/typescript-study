@@ -56,4 +56,5 @@ function createCourseGoal(title, description, date) {
     courseGoal.deadline = date;
     return courseGoal;
 }
+const names = ['Hana', 'Mana'];
 //# sourceMappingURL=app.js.map
