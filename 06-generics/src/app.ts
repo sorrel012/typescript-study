@@ -81,4 +81,22 @@ const nameObject = { name: 'Hana' };
 objStorage.addItem(nameObject);
 objStorage.addItem({ name: 'Mana' });
 objStorage.removeItem(nameObject);
-console.log(objStorage.getItems());
+// console.log(objStorage.getItems());
+
+interface CourseGoal {
+  title: string;
+  description: string;
+  deadline: Date;
+}
+
+function createCourseGoal(
+  title: string,
+  description: string,
+  date: Date,
+): CourseGoal {
+  let courseGoal: Partial<CourseGoal> = {};
+  courseGoal.title = title;
+  courseGoal.description = description;
+  courseGoal.deadline = date;
+  return courseGoal as CourseGoal;
+}

@@ -49,5 +49,11 @@ const nameObject = { name: 'Hana' };
 objStorage.addItem(nameObject);
 objStorage.addItem({ name: 'Mana' });
 objStorage.removeItem(nameObject);
-console.log(objStorage.getItems());
+function createCourseGoal(title, description, date) {
+    let courseGoal = {};
+    courseGoal.title = title;
+    courseGoal.description = description;
+    courseGoal.deadline = date;
+    return courseGoal;
+}
 //# sourceMappingURL=app.js.map
