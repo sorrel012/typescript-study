@@ -22,7 +22,7 @@ type Numeric = number | boolean;
 type Universal = Combinable & Numeric;
 let test: Universal = 3;
 
-function add(a: Combinable, b: Combinable): number;
+function add(a: number, b: number): number;
 function add(a: string, b: string): string;
 function add(a: Combinable, b: Combinable) {
   if (typeof a === 'string' || typeof b === 'string') {
@@ -32,6 +32,7 @@ function add(a: Combinable, b: Combinable) {
 }
 
 const result = add(1, 5);
+const result2 = add('Hana', 'Two');
 
 //
 // type UnknownEmployee = Employee | Admin;
