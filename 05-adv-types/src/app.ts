@@ -34,6 +34,18 @@ function add(a: Combinable, b: Combinable) {
 const result = add(1, 5);
 const result2 = add('Hana', 'Two');
 
+const fetchedUserData = {
+  id: 'u1',
+  name: 'Hana',
+  job: { title: 'Developer', description: 'Front-end developer' },
+};
+
+console.log(fetchedUserData.job?.description);
+
+const userInput = null;
+
+const storedData = userInput ?? 'DEFAULT';
+
 //
 // type UnknownEmployee = Employee | Admin;
 //
